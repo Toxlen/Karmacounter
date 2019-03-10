@@ -8,6 +8,7 @@ var messsage_final = "";
 
 bot.on('ready', function()
 {
+	console.log("C'est partie !!")
 	for(var [key, value] of utilisateurs)
 	{
 		if (!(key == 1))
