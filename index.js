@@ -22,17 +22,17 @@ bot.on('ready', function()
 bot.on('message', function(message)
 {
 	let Splited = message.content.split(' ')
-	if (Splited[0] === '/karmaliste')
+	if (Splited[0] === '!karmaliste')
 	{
 		message_final = "Voici la liste des membres du serveur avec leurs karma :\n\n"
 		for(var [key, value] of liste)
 		{
 			message_final += "<@" + key + ">" + " avec " + value + " pts\n"
 		}
-		message_final += "\nPour connaître directement la personne avec le plus de karma tape /karmaking :wink:"
+		message_final += "\nPour connaître directement la personne avec le plus de karma tape !karmaking :wink:"
 		message.channel.send(message_final)
 	}
-	else if(Splited[0] === '/karma' && (message.member.highestRole.name === 'rois' || message.member.highestRole.name === 'Pd1'))
+	else if(Splited[0] === '!karma' && (message.member.highestRole.name === 'rois' || message.member.highestRole.name === 'Pd1'))
 	{
 		a_modifie = message.mentions.users
 		for(var [key, value] of a_modifie)
@@ -41,7 +41,7 @@ bot.on('message', function(message)
 			message.channel.send("J'ai bien fait " + Splited[2] + " au karma de <@" + key + ">\nIl a donc " + liste.get(key) + " pts de karma maintenant ! :tada:" )
 		}
 	}
-	else if(Splited[0] === '/karmaking')
+	else if(Splited[0] === '!karmaking')
 	{
 		var karmaking_nom = ""
 		var karmaking_valeur = 0
@@ -66,11 +66,11 @@ bot.on('message', function(message)
 			{
 				message_final += "<@" + karmakingnom + "> "
 			}
-			message_final += "\nBien joué a eu on peut les applaudir ! :clap: :clap:"
+			message_final +=  "avec " + karmaking_valeur + " pts\nBien joué a eu on peut les applaudir ! :clap: :clap:"
 		}
 		else
 		{
-			message_final = "Le roi du karma est : <@" + karmaking_nom + "> \nBien joué a lui on peut l'applaudir ! :clap: :clap:"
+			message_final = "Le roi du karma est : <@" + karmaking_nom + "> avec " + karmaking_valeur + " pts \nBien joué a lui on peut l'applaudir ! :clap: :clap:"
 		}
 		message.channel.send(message_final)
 	}
