@@ -1,6 +1,6 @@
-const Discord = require('discord.js')
-const bot = new Discord.Client()
-const Token = process.env.Token;
+const Discord = require('discord.js');
+const bot = new Discord.Client();
+const token = process.env.token;
 
 var utilisateurs = bot.users;
 var liste = new Map();
@@ -73,4 +73,4 @@ bot.on('message', function(message)
 	}
 }) 
 
-bot.login(Token)
+bot.login(token)
