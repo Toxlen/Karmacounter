@@ -6,7 +6,7 @@ var utilisateurs = bot.users;
 var liste = new Map();
 var messsage_final = "";
 
-setInterval(console.log("En fonctionnement ..."), 50000);
+setInterval(function(){console.log("En fonctionnement ...")}, 50000);
 
 bot.on('ready', function()
 {
