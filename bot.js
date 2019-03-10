@@ -1,5 +1,6 @@
 const Discord = require('discord.js')
 const bot = new Discord.Client()
+const Token = process.env.Token;
 
 var utilisateurs = bot.users;
 var liste = new Map();
