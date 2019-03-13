@@ -1,12 +1,14 @@
 const Discord = require('discord.js');
 const bot = new Discord.Client();
 const token = process.env.token;
+const joue_a = process.env.joue_a;
 
 var utilisateurs = bot.users;
 var liste = new Map();
 var messsage_final = "";
 
-setInterval(function(){console.log("En fonctionnement ...")}, 50000);
+setInterval(function(){console.log("En fonctionnement ...")
+		       bot.user.setActivity(joue_a)}, 50000);
 
 bot.on('ready', function()
 {
@@ -16,7 +18,7 @@ bot.on('ready', function()
 		if (!(key == 1))
 		liste.set(key, 0)
 	}
-	bot.user.setActivity('faire baissé le karma de Laetitia')
+	bot.user.setActivity(joue_a)
 })
 
 bot.on('message', function(message)
