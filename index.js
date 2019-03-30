@@ -7,9 +7,6 @@ var utilisateurs = bot.users;
 var liste = new Map();
 var messsage_final = "";
 
-setInterval(function(){console.log("En fonctionnement ...")
-		       bot.user.setActivity(joue_a)}, 50000);
-
 bot.on('ready', function()
 {
 	console.log("C'est partie !!")
