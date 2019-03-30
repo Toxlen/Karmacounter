@@ -19,7 +19,6 @@ bot.on('ready', function()
 		{
 			liste_roles.set(value.name + value.guild.id, key)
 		}
-		console.log(valeur.roles)
 	}
 	for(var [cle, valeur] of bot.emojis)
 	{
@@ -51,6 +50,7 @@ bot.on('ready', function()
 		}
 	}
 	bot.user.setActivity(joue_a)
+	console.log("C'est partie !")
 })
 
 bot.on('message', function(message)
