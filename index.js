@@ -78,7 +78,7 @@ bot.on('message', function(message)
 		message_final = "**Voici la liste des membres du serveur avec leurs karma :**\n\n"
 		for(var [key, value] of liste_utilisateurs)
 		{
-			message_final += "<" + key + ">" + " avec **" + value + " pts**\n"
+			message_final += "<@" + key + ">" + " avec **" + value + " pts**\n"
 		}
 		message_final += "\nPour connaître directement la personne avec le plus de karma tape **!karmaking** :wink:"
 		message.channel.send(message_final)
